@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Admin — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a href="#" class="sidebar__brand">
+        <span class="sidebar__logo">◆</span>
+        Pulse Admin
+      </a>
+      <nav class="sidebar__nav" id="sidebarNav">
+        <button type="button" class="nav-item is-active" data-view="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          Dashboard
+        </button>
+        <button type="button" class="nav-item" data-view="orders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+          Orders
+          <span class="nav-item__badge" id="ordersBadge">12</span>
+        </button>
+        <button type="button" class="nav-item" data-view="customers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          Customers
+        </button>
+        <button type="button" class="nav-item" data-view="products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          Products
+        </button>
+        <button type="button" class="nav-item" data-view="analytics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Analytics
+        </button>
+        <button type="button" class="nav-item" data-view="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Settings
+        </button>
+      </nav>
+      <div class="sidebar__foot">
+        <a href="../../index.html" class="sidebar__back">← Portfolio</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" hidden></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="topbar__menu" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar__search">
+          <input type="search" id="globalSearch" placeholder="Search orders, customers…" aria-label="Search" />
+        </div>
+        <div class="topbar__actions">
+          <div class="notif-wrap">
+            <button type="button" class="topbar__icon" id="notifBtn" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+              <span class="notif-dot"></span>
+            </button>
+            <div class="notif-panel" id="notifPanel" hidden>
+              <p class="notif-panel__title">Notifications</p>
+              <ul id="notifList"></ul>
+            </div>
+          </div>
+          <div class="user-menu">
+            <button type="button" class="user-menu__btn" id="userBtn">
+              <span class="user-menu__avatar">A</span>
+              <span>Admin</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Dashboard -->
+        <section class="view is-active" id="view-dashboard" data-view="dashboard">
+          <div class="page-head">
+            <div>
+              <h1>Dashboard</h1>
+              <p class="page-head__sub">Welcome back — here's what's happening today.</p>
+            </div>
+            <select class="period-select" id="periodSelect" aria-label="Time period">
+              <option value="7">Last 7 days</option>
+              <option value="30">Last 30 days</option>
+              <option value="90">Last 90 days</option>
+            </select>
+          </div>
+
+          <div class="stats" id="statsGrid"></div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card__head">
+                <h2>Revenue overview</h2>
+                <span class="card__meta" id="chartMeta">This week</span>
+              </div>
+              <div class="chart" id="revenueChart" aria-hidden="true"></div>
+            </div>
+            <div class="card">
+              <div class="card__head">
+                <h2>Orders by status</h2>
+              </div>
+              <div class="donut-wrap">
+                <div class="donut" id="statusDonut">
+                  <span class="donut__center" id="donutCenter">0</span>
+                </div>
+                <ul class="donut-legend" id="donutLegend"></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head">
+              <h2>Recent orders</h2>
+              <a href="#" class="link" data-goto="orders">View all →</a>
+            </div>
+            <div class="table-wrap">
+              <table class="table" id="recentOrdersTable">
+                <thead>
+                  <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Orders -->
+        <section class="view" id="view-orders" data-view="orders" hidden>
+          <div class="page-head">
+            <div>
+              <h1>Orders</h1>
+              <p class="page-head__sub">Manage and update order statuses.</p>
+            </div>
+          </div>
+          <div class="toolbar">
+            <div class="tabs" id="orderTabs">
+              <button type="button" class="tab is-active" data-status="all">All</button>
+              <button type="button" class="tab" data-status="pending">Pending</button>
+              <button type="button" class="tab" data-status="processing">Processing</button>
+              <button type="button" class="tab" data-status="shipped">Shipped</button>
+              <button type="button" class="tab" data-status="delivered">Delivered</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="table-wrap">
+              <table class="table table--actions" id="ordersTable">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Customers -->
+        <section class="view" id="view-customers" data-view="customers" hidden>
+          <div class="page-head">
+            <div>
+              <h1>Customers</h1>
+              <p class="page-head__sub">Your registered and guest buyers.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="customers-grid" id="customersGrid"></div>
+          </div>
+        </section>
+
+        <!-- Products -->
+        <section class="view" id="view-products" data-view="products" hidden>
+          <div class="page-head">
+            <div>
+              <h1>Products</h1>
+              <p class="page-head__sub">Inventory and stock levels.</p>
+            </div>
+            <button type="button" class="btn btn--primary" id="addProductBtn">+ Add product</button>
+          </div>
+          <div class="card">
+            <div class="table-wrap">
+              <table class="table" id="productsTable">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>SKU</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Analytics -->
+        <section class="view" id="view-analytics" data-view="analytics" hidden>
+          <div class="page-head">
+            <div>
+              <h1>Analytics</h1>
+              <p class="page-head__sub">Traffic and conversion metrics (demo data).</p>
+            </div>
+          </div>
+          <div class="stats stats--4" id="analyticsStats"></div>
+          <div class="card">
+            <div class="card__head"><h2>Weekly traffic</h2></div>
+            <div class="chart chart--tall" id="trafficChart"></div>
+          </div>
+        </section>
+
+        <!-- Settings -->
+        <section class="view" id="view-settings" data-view="settings" hidden>
+          <div class="page-head">
+            <div>
+              <h1>Settings</h1>
+              <p class="page-head__sub">Store preferences — demo form only.</p>
+            </div>
+          </div>
+          <div class="card card--narrow">
+            <form id="settingsForm" class="settings-form">
+              <div class="form-row">
+                <label for="storeName">Store name</label>
+                <input type="text" id="storeName" value="Hearth Goods" />
+              </div>
+              <div class="form-row">
+                <label for="storeEmail">Support email</label>
+                <input type="email" id="storeEmail" value="hello@hearthgoods.demo" />
+              </div>
+              <div class="form-row">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                  <option>USD ($)</option>
+                  <option>EUR (€)</option>
+                  <option>GBP (£)</option>
+                </select>
+              </div>
+              <div class="form-row form-row--check">
+                <input type="checkbox" id="notifyOrders" checked />
+                <label for="notifyOrders">Email on new orders</label>
+              </div>
+              <button type="submit" class="btn btn--primary">Save changes</button>
+              <p class="form-msg" id="settingsMsg" role="status"></p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

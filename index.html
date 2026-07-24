@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Freelance web developer — custom websites, ecommerce, booking systems, and admin dashboards for small businesses." />
+  <title>Your Name | Freelance Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Use only ONE stylesheet (do not also link styles.css — that causes double styling) -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--1" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--2" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-mark">&lt;/&gt;</span>
+        <span class="nav__logo-text">DevPortfolio</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Let's talk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow reveal">
+          <span class="hero__status"></span>
+          Available for freelance projects
+        </p>
+        <h1 class="hero__title reveal reveal--delay-1">
+          I build websites that help
+          <span class="hero__highlight">small businesses</span>
+          grow online.
+        </h1>
+        <p class="hero__subtitle reveal reveal--delay-2">
+          Freelance web developer &amp; software engineer. From stylish storefronts to booking systems and admin dashboards — clean code, fast sites, no fluff.
+        </p>
+        <div class="hero__actions reveal reveal--delay-3">
+          <a href="#work" class="btn btn--primary">View my work</a>
+          <a href="#contact" class="btn btn--ghost">Get a quote</a>
+        </div>
+        <dl class="hero__stats reveal reveal--delay-4">
+          <div>
+            <dt>5+</dt>
+            <dd>Live demo projects</dd>
+          </div>
+          <div>
+            <dt>100%</dt>
+            <dd>Hand-coded HTML, CSS &amp; JS</dd>
+          </div>
+          <div>
+            <dt>24h</dt>
+            <dd>Typical response time</dd>
+          </div>
+        </dl>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about section">
+        <span>Scroll</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="section__label reveal">About me</div>
+        <div class="about__content">
+          <h2 class="section__title reveal">Hi, I'm <span class="text-accent">Michael</span> — your partner for the web.</h2>
+          <p class="section__text reveal reveal--delay-1">
+            I specialize in web development, internal systems, data-driven applications, and turning ideas into practical software solutions. Whether it's a business website, an internal platform, a dashboard, or a custom web application, I enjoy designing systems that are intuitive, reliable, and built to solve real problems.
+          </p>
+          <p class="section__text reveal reveal--delay-2">
+            The projects below are interactive demos and personal builds created from scratch using modern web technologies. Each project reflects my approach to development: clean code, thoughtful design, and a strong focus on usability and maintainability.
+          </p>
+          <ul class="about__list reveal reveal--delay-3">
+            <li>Responsive experiences that work across desktop and mobile</li>
+            <li>Clean, scalable code and software architecture</li>
+            <li>Data-driven features, dashboards, and business tools</li>
+            <li>Continuous learning and experimentation with new technologies</li>
+          </ul>
+        </div>
+        <div class="about__card reveal reveal--delay-2">
+          <div class="about__card-inner">
+            <p class="about__card-label">Who I help</p>
+            <ul class="about__clients">
+              <li><span>01</span> Retail &amp; fashion brands</li>
+              <li><span>02</span> Cafés &amp; restaurants</li>
+              <li><span>03</span> Service businesses needing bookings</li>
+              <li><span>04</span> Small shops selling online</li>
+              <li><span>05</span> Teams needing dashboards &amp; admin panels</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__header reveal">
+          <div class="section__label">What I do</div>
+          <h2 class="section__title">Skills &amp; services</h2>
+          <p class="section__text section__text--narrow">
+            End-to-end front-end development — from landing pages to full demo applications you can show investors or customers.
+          </p>
+        </div>
+        <div class="services__grid">
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>Business websites</h3>
+            <p>Brand-focused sites for cafés, studios, and local businesses — menus, galleries, hours, and contact flows that convert.</p>
+          </article>
+          <article class="service-card reveal reveal--delay-1">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            </div>
+            <h3>Ecommerce &amp; stores</h3>
+            <p>Product catalogs, carts, and checkout-style flows for clothing brands and small shops ready to sell online.</p>
+          </article>
+          <article class="service-card reveal reveal--delay-2">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3>Booking systems</h3>
+            <p>Appointment and reservation UIs for salons, clinics, and services — clear calendars, time slots, and confirmations.</p>
+          </article>
+          <article class="service-card reveal reveal--delay-3">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            </div>
+            <h3>Dashboards &amp; admin</h3>
+            <p>Data tables, charts, and management panels so business owners can track orders, users, or inventory at a glance.</p>
+          </article>
+        </div>
+        <div class="tech-stack reveal">
+          <p class="tech-stack__label">Built with</p>
+          <ul class="tech-stack__list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Git</li>
+            <li>Responsive design</li>
+            <li>Web accessibility</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Demos -->
+    <section class="section work" id="work">
+      <div class="container">
+        <div class="section__header reveal">
+          <div class="section__label">Portfolio</div>
+          <h2 class="section__title">Live demo projects</h2>
+          <p class="section__text section__text--narrow">
+            Click through interactive demos — each one showcases a different type of site I build for clients. More demos launching soon.
+          </p>
+        </div>
+        <div class="projects__grid">
+          <!-- 1. Clothing store -->
+          <article class="project-card reveal" data-demo="clothing-store">
+            <a href="demos/clothing-store/index.html" class="project-card__link">
+              <div class="project-card__visual">
+                <img src="images/clothing.png" alt="Preview of the clothing store demo" class="project-card__image"/>
+                <span class="project-card__badge">Live demo</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">Retail</span>
+                <h3>Clothing store</h3>
+                <p>Lookbook-style layout, collections, and product grids for fashion brands.</p>
+                <ul class="project-card__tags">
+                  <li>Catalog</li>
+                  <li>Filters</li>
+                  <li>Responsive</li>
+                </ul>
+                <span class="project-card__cta">View demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- 2. Cafe -->
+          <article class="project-card reveal reveal--delay-1" data-demo="cafe">
+            <a href="demos/cafe/index.html" class="project-card__link">
+              <div class="project-card__visual">
+                <img src="images/cafe.png" alt="Preview of the cafe website demo" class="project-card__image"/>
+                <span class="project-card__badge">Live demo</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">Hospitality</span>
+                <h3>Café website</h3>
+                <p>Warm branding, menu sections, location map, and hours for local coffee shops.</p>
+                <ul class="project-card__tags">
+                  <li>Menu</li>
+                  <li>Gallery</li>
+                  <li>Contact</li>
+                </ul>
+                <span class="project-card__cta">View demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- 3. Booking -->
+          <article class="project-card reveal reveal--delay-2" data-demo="booking">
+            <a href="demos/booking/index.html" class="project-card__link">
+              <div class="project-card__visual">
+                <img src="images/booking.png" alt="Preview of the booking system demo" class="project-card__image"/>
+                <span class="project-card__badge">Live demo</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">Services</span>
+                <h3>Booking system</h3>
+                <p>Date picker, time slots, and booking confirmation flow for appointment-based businesses.</p>
+                <ul class="project-card__tags">
+                  <li>Calendar</li>
+                  <li>Forms</li>
+                  <li>UX</li>
+                </ul>
+                <span class="project-card__cta">View demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- 4. Simple ecommerce -->
+          <article class="project-card reveal" data-demo="ecommerce">
+            <a href="demos/ecommerce/index.html" class="project-card__link">
+              <div class="project-card__visual">
+                <img src="images/ecommerce.png" alt="Preview of the simple ecommerce demo" class="project-card__image"/>
+                <span class="project-card__badge">Live demo</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">Ecommerce</span>
+                <h3>Simple ecommerce</h3>
+                <p>Product pages, cart sidebar, and checkout-style UI for small online shops.</p>
+                <ul class="project-card__tags">
+                  <li>Cart</li>
+                  <li>Checkout</li>
+                  <li>Products</li>
+                </ul>
+                <span class="project-card__cta">View demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- 5. Dashboard -->
+          <article class="project-card reveal reveal--delay-1" data-demo="dashboard">
+            <a href="demos/dashboard/index.html" class="project-card__link">
+              <div class="project-card__visual">
+                <img src="images/admin.png" alt="Preview of the dashboard/admin panel demo" class="project-card__image"/>
+                <span class="project-card__badge">Live demo</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">Admin</span>
+                <h3>Dashboard / admin panel</h3>
+                <p>Sidebar navigation, stats cards, tables, and charts for managing a business backend.</p>
+                <ul class="project-card__tags">
+                  <li>Analytics</li>
+                  <li>Tables</li>
+                  <li>Sidebar</li>
+                </ul>
+                <span class="project-card__cta">View demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+              </div>
+            </a>
+          </article>
+        </div>
+
+       <!-- Software Projects -->
+<div class="section__header reveal" style="margin-top: 5rem;">
+  <div class="section__label">Software</div>
+  <h2 class="section__title">Software projects</h2>
+  <p class="section__text section__text--narrow">
+    A collection of software engineering projects covering artificial intelligence, financial analysis, data visualization, productivity tools, and interactive web applications.
+  </p>
+</div>
+
+<div class="projects__grid">
+
+  <!-- 1. PDF Annotation Tool -->
+  <article class="project-card reveal">
+    <a href="https://s-w00k.github.io/AnnotationFeature/" class="project-card__link">
+      <div class="project-card__visual">
+        <img
+          src="images/pdf-annotation.png"
+          alt="Preview of the PDF annotation application"
+          class="project-card__image"
+        />
+        <span class="project-card__badge">Project</span>
+      </div>
+
+      <div class="project-card__body">
+        <span class="project-card__category">Productivity</span>
+        <h3>PDF Annotation Tool</h3>
+        <p>
+          Interactive PDF viewer with freehand drawing, annotations, comments,
+          text formatting, and persistent page-based storage.
+        </p>
+
+        <ul class="project-card__tags">
+          <li>PDF.js</li>
+          <li>Canvas</li>
+          <li>LocalStorage</li>
+        </ul>
+
+        <span class="project-card__cta">
+          View project
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </article>
+
+  <!-- 2. Job Agent AI -->
+  <article class="project-card reveal reveal--delay-1">
+    <a href="https://github.com/s-w00k/AI-Job-Hunter-Agent" class="project-card__link">
+      <div class="project-card__visual">
+        <img
+          src="images/job-agent.png"
+          alt="Preview of the Job Agent AI application"
+          class="project-card__image"
+        />
+        <span class="project-card__badge">Project</span>
+      </div>
+
+      <div class="project-card__body">
+        <span class="project-card__category">Artificial Intelligence</span>
+        <h3>Job Agent AI</h3>
+        <p>
+          Automated job-search assistant that gathers opportunities, analyzes
+          job descriptions, evaluates matches, and generates tailored application content.
+        </p>
+
+        <ul class="project-card__tags">
+          <li>AI</li>
+          <li>Node.js</li>
+          <li>Automation</li>
+        </ul>
+
+        <span class="project-card__cta">
+          View project
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </article>
+
+  <!-- 3. Forex Plus -->
+  <article class="project-card reveal reveal--delay-2">
+    <a href="https://forexplus.onrender.com/" class="project-card__link">
+      <div class="project-card__visual">
+        <img
+          src="images/forex-plus.png"
+          alt="Preview of the Forex Plus trading dashboard"
+          class="project-card__image"
+        />
+        <span class="project-card__badge">Project</span>
+      </div>
+
+      <div class="project-card__body">
+        <span class="project-card__category">Financial Analytics</span>
+        <h3>Forex Plus</h3>
+        <p>
+          Forex analysis dashboard that processes live market data, technical
+          indicators, trends, and trading sessions to generate buy, sell, or wait signals.
+        </p>
+
+        <ul class="project-card__tags">
+          <li>API</li>
+          <li>Chart.js</li>
+          <li>Indicators</li>
+        </ul>
+
+        <span class="project-card__cta">
+          View project
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </article>
+
+  <!-- 4. Money RPG -->
+  <article class="project-card reveal">
+    <a href="https://s-w00k.github.io/savingsxp/" class="project-card__link">
+      <div class="project-card__visual">
+        <img
+          src="images/money-rpg.png"
+          alt="Preview of the Money RPG application"
+          class="project-card__image"
+        />
+        <span class="project-card__badge">Project</span>
+      </div>
+
+      <div class="project-card__body">
+        <span class="project-card__category">Personal Finance</span>
+        <h3>Money RPG</h3>
+        <p>
+          Gamified personal-finance tracker that converts savings progress into
+          experience points, levels, ranks, and a visible financial progression system.
+        </p>
+
+        <ul class="project-card__tags">
+          <li>JavaScript</li>
+          <li>Gamification</li>
+          <li>Finance</li>
+        </ul>
+
+        <span class="project-card__cta">
+          View project
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </article>
+
+  <!-- 5. CSV Analytics Platform -->
+  <article class="project-card reveal reveal--delay-1">
+    <a href="https://csv-data-processing-visualization-engine.onrender.com/" class="project-card__link">
+      <div class="project-card__visual">
+        <img
+          src="images/csv-analytics.png"
+          alt="Preview of the CSV analytics platform"
+          class="project-card__image"
+        />
+        <span class="project-card__badge">Project</span>
+      </div>
+
+      <div class="project-card__body">
+        <span class="project-card__category">Data Analytics</span>
+        <h3>CSV Analytics Platform</h3>
+        <p>
+          Browser-based analytics application that accepts uploaded CSV files
+          and transforms the data into summaries, charts, and visual insights.
+        </p>
+
+        <ul class="project-card__tags">
+          <li>Node.js</li>
+          <li>CSV</li>
+          <li>Visualization</li>
+        </ul>
+
+        <span class="project-card__cta">
+          View project
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </article>
+
+  <!-- 6. Crypto Dashboard -->
+  <article class="project-card reveal reveal--delay-2">
+    <a href="https://s-w00k.github.io/Crypto-Dashboard/" class="project-card__link">
+      <div class="project-card__visual">
+        <img
+          src="images/crypto-dashboard.png"
+          alt="Preview of the cryptocurrency dashboard"
+          class="project-card__image"
+        />
+        <span class="project-card__badge">Project</span>
+      </div>
+
+      <div class="project-card__body">
+        <span class="project-card__category">Cryptocurrency</span>
+        <h3>Crypto Dashboard</h3>
+        <p>
+          Interactive cryptocurrency dashboard for monitoring asset prices,
+          market performance, historical trends, and key portfolio information.
+        </p>
+
+        <ul class="project-card__tags">
+          <li>API</li>
+          <li>Charts</li>
+          <li>Crypto</li>
+        </ul>
+
+        <span class="project-card__cta">
+          View project
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </article>
+
+  <!-- 7. Overkill Login Page -->
+  <article class="project-card reveal">
+    <a href="https://s-w00k.github.io/overkill_loginPage/" class="project-card__link">
+      <div class="project-card__visual">
+        <img
+          src="images/overkill-login.png"
+          alt="Preview of the Overkill Login Page"
+          class="project-card__image"
+        />
+        <span class="project-card__badge">Project</span>
+      </div>
+
+      <div class="project-card__body">
+        <span class="project-card__category">Frontend Showcase</span>
+        <h3>Overkill Login Page</h3>
+        <p>
+          Experimental login interface featuring animated particles, glowing
+          visual effects, interactive elements, and a highly polished futuristic design.
+        </p>
+
+        <ul class="project-card__tags">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Animations</li>
+        </ul>
+
+        <span class="project-card__cta">
+          View project
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+  </article>
+
+</div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro reveal">
+          <div class="section__label">Contact</div>
+          <h2 class="section__title">Let's build something together.</h2>
+          <p class="section__text">
+            Tell me about your project — timeline, budget, and what you're trying to achieve. I'll get back to you within 24 hours.
+          </p>
+          <ul class="contact__links">
+            <li>
+              <a href="mailto:swhong228@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                swhong228@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/michael-hong-313a43211/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/s-w00k" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+        <form class="contact__form reveal reveal--delay-1" id="contactForm" action="https://formspree.io/f/mvzepwaq" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com" />
+          </div>
+          <div class="form-group">
+            <label for="project">Project type</label>
+            <select id="project" name="project">
+              <option value="">Select one…</option>
+              <option value="website">Business website</option>
+              <option value="ecommerce">Ecommerce / store</option>
+              <option value="booking">Booking system</option>
+              <option value="dashboard">Dashboard / admin</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project, timeline, and budget…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send message</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Your Name. Built with HTML, CSS &amp; JavaScript.</p>
+      <a href="#home" class="footer__top">Back to top</a>
+    </div>
+  </footer>
+
+  <!-- Toast for coming-soon demos -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive" hidden>
+    <p>This demo is coming soon — we're building it next!</p>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

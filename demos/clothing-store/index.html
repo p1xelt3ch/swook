@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATELIER NOIR — Luxury Fashion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">ATELIER <span>NOIR</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#editorial">Editorial</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button type="button" class="nav__bag" id="openBag" aria-label="Open bag">
+          Bag <span class="nav__count" id="bagCount">0</span>
+        </button>
+        <button type="button" class="nav__menu" id="menuToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__content reveal">
+        <p class="hero__eyebrow">Spring / Summer 2026</p>
+        <h1 class="hero__title">Sculpted<br /><em>silhouettes</em><br />for the bold.</h1>
+        <p class="hero__text">Hand-finished pieces in Italian wool, silk, and organic cotton. Limited runs. No compromises.</p>
+        <div class="hero__cta">
+          <a href="#shop" class="btn btn--gold">Shop the collection</a>
+          <a href="#editorial" class="btn btn--ghost">View lookbook</a>
+        </div>
+      </div>
+      <div class="hero__visual reveal">
+        <div class="hero__frame">
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85"
+            alt="Editorial fashion portrait"
+            width="600"
+            height="800"
+          />
+        </div>
+        <div class="hero__badge">
+          <span>New</span>
+          <strong>The Meridian Capsule</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Free shipping over $200</span>
+        <span>◆</span>
+        <span>Complimentary tailoring</span>
+        <span>◆</span>
+        <span>Carbon-neutral packaging</span>
+        <span>◆</span>
+        <span>Atelier-crafted in Milan</span>
+        <span>◆</span>
+      </div>
+    </section>
+
+    <section class="collections reveal" id="collections">
+      <div class="section-head">
+        <p class="section-label">Curated</p>
+        <h2>Collections</h2>
+      </div>
+      <div class="collections__grid">
+        <a href="#shop" class="collection-card collection-card--large reveal">
+          <img
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85"
+            alt="Evening wear collection"
+            loading="lazy"
+          />
+          <span class="collection-card__arrow" aria-hidden="true">→</span>
+          <div class="collection-card__overlay">
+            <span>Evening</span>
+            <h3>After Dusk</h3>
+          </div>
+        </a>
+        <a href="#shop" class="collection-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1469334031218-e042a51e0849?auto=format&fit=crop&w=700&q=85"
+            alt="Ready to wear"
+            loading="lazy"
+          />
+          <span class="collection-card__arrow" aria-hidden="true">→</span>
+          <div class="collection-card__overlay">
+            <span>Ready-to-wear</span>
+            <h3>Urban Line</h3>
+          </div>
+        </a>
+        <a href="#shop" class="collection-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1483984988956-313e54efeabc?auto=format&fit=crop&w=700&q=85"
+            alt="Accessories"
+            loading="lazy"
+          />
+          <span class="collection-card__arrow" aria-hidden="true">→</span>
+          <div class="collection-card__overlay">
+            <span>Accessories</span>
+            <h3>Leather &amp; Silk</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="shop reveal" id="shop">
+      <div class="section-head section-head--row">
+        <div>
+          <p class="section-label">The edit</p>
+          <h2>Shop all</h2>
+        </div>
+        <div class="filters" id="filters" role="tablist">
+          <button type="button" class="filter is-active" data-filter="all">All</button>
+          <button type="button" class="filter" data-filter="outerwear">Outerwear</button>
+          <button type="button" class="filter" data-filter="dresses">Dresses</button>
+          <button type="button" class="filter" data-filter="accessories">Accessories</button>
+        </div>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="editorial reveal" id="editorial">
+      <div class="editorial__inner">
+        <div class="editorial__copy reveal">
+          <p class="section-label">Editorial</p>
+          <h2>Crafted in Milan.<br />Worn everywhere.</h2>
+          <p>Each garment passes through twelve stages of quality control. Discover the story behind our atelier and the artisans who shape every seam.</p>
+          <a href="#shop" class="btn btn--ghost">Explore the shop</a>
+        </div>
+        <div class="editorial__imgs">
+          <img
+            class="reveal"
+            src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=85"
+            alt="Fashion editorial"
+            loading="lazy"
+          />
+          <img
+            class="reveal"
+            src="https://images.unsplash.com/photo-1483985988359-763728e3685b?auto=format&fit=crop&w=600&q=85"
+            alt="Street style"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__logo">ATELIER NOIR</p>
+    <p class="footer__note">Demo store — portfolio piece. Not a real shop.</p>
+    <a href="../../index.html" class="footer__back">← Back to portfolio</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="bag-overlay" id="bagOverlay" hidden></div>
+  <aside class="bag" id="bag" aria-label="Shopping bag" hidden>
+    <div class="bag__head">
+      <h2>Your bag</h2>
+      <button type="button" id="closeBag" aria-label="Close bag">&times;</button>
+    </div>
+    <ul class="bag__items" id="bagItems"></ul>
+    <p class="bag__empty" id="bagEmpty">Your bag is empty.</p>
+    <div class="bag__foot">
+      <p class="bag__total">Total: <strong id="bagTotal">$0</strong></p>
+      <button type="button" class="btn btn--gold btn--full">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="modalOverlay" hidden></div>
+  <div class="quick-view" id="quickView" hidden role="dialog" aria-modal="true" aria-label="Quick view"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hearth Goods — Simple Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="promo" id="promo">
+    <p>Free shipping on orders over $50 · <strong>SPRING15</strong> for 15% off</p>
+    <button type="button" id="closePromo" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">Hearth <span>Goods</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Why us</a></li>
+      </ul>
+      <div class="nav__actions">
+        <div class="search-wrap">
+          <input type="search" id="search" placeholder="Search products…" aria-label="Search products" />
+        </div>
+        <button type="button" class="cart-btn" id="openCart" aria-label="Open cart">
+          Cart
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button type="button" class="nav__menu" id="menuToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__inner reveal">
+        <p class="eyebrow">Curated for everyday living</p>
+        <h1>Thoughtful goods for a <em>cozier home.</em></h1>
+        <p class="hero__lead">Small-batch homeware, kitchen essentials, and gifts — shipped in 2–3 days. Demo shop for portfolio.</p>
+        <a href="#shop" class="btn btn--primary">Browse collection</a>
+      </div>
+      <div class="hero__banner reveal">
+        <img
+          src="https://images.unsplash.com/photo-1693382464372-fad822e7b38c?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Styled home interior with products"
+          width="900"
+          height="500"
+        />
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="shop__toolbar reveal">
+        <div class="filters" id="filters">
+          <button type="button" class="filter is-active" data-cat="all">All</button>
+          <button type="button" class="filter" data-cat="home">Home</button>
+          <button type="button" class="filter" data-cat="kitchen">Kitchen</button>
+          <button type="button" class="filter" data-cat="gifts">Gifts</button>
+        </div>
+        <select class="sort" id="sort" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <p class="shop__count reveal" id="resultCount"></p>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about__grid">
+        <div class="about__copy reveal">
+          <p class="eyebrow">Our story</p>
+          <h2>Quality over quantity.</h2>
+          <p>We partner with independent makers to stock pieces that last — no fast-fashion for your home. Every item is tested in our studio before it hits the shelf.</p>
+          <ul class="about__list">
+            <li>Carbon-neutral shipping</li>
+            <li>30-day easy returns</li>
+            <li>Secure checkout (demo)</li>
+          </ul>
+        </div>
+        <div class="about__imgs reveal">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d4046?auto=format&fit=crop&w=600&q=85" alt="Kitchen products" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=500&q=85" alt="Home decor" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="features__grid">
+        <article class="feature reveal">
+          <span>🚚</span>
+          <h3>Fast delivery</h3>
+          <p>2–3 business days nationwide</p>
+        </article>
+        <article class="feature reveal">
+          <span>↩</span>
+          <h3>Easy returns</h3>
+          <p>30-day hassle-free policy</p>
+        </article>
+        <article class="feature reveal">
+          <span>🔒</span>
+          <h3>Secure checkout</h3>
+          <p>Encrypted payment flow (demo UI)</p>
+        </article>
+        <article class="feature reveal">
+          <span>💬</span>
+          <h3>Real support</h3>
+          <p>Chat with a human, not a bot</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__brand">Hearth Goods</p>
+    <p class="footer__note">Portfolio demo · Imagery via <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash License</a></p>
+    <a href="../../index.html" class="footer__back">← Back to portfolio</a>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="cartOverlay" hidden></div>
+  <aside class="cart" id="cart" aria-label="Shopping cart" hidden>
+    <div class="cart__head">
+      <h2>Your cart</h2>
+      <button type="button" id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+    <ul class="cart__items" id="cartItems"></ul>
+    <p class="cart__empty" id="cartEmpty">Your cart is empty.</p>
+    <div class="cart__foot">
+      <div class="cart__row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$0.00</strong>
+      </div>
+      <div class="cart__row cart__row--muted">
+        <span>Shipping</span>
+        <span id="cartShipping">Calculated at checkout</span>
+      </div>
+      <button type="button" class="btn btn--primary btn--full" id="openCheckout" disabled>Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Checkout modal -->
+  <div class="overlay" id="checkoutOverlay" hidden></div>
+  <dialog class="checkout" id="checkoutModal" aria-labelledby="checkoutTitle">
+    <button type="button" class="checkout__close" id="closeCheckout" aria-label="Close">&times;</button>
+    <div class="checkout__grid">
+      <div class="checkout__form-wrap">
+        <p class="eyebrow">Checkout</p>
+        <h2 id="checkoutTitle">Complete your order</h2>
+        <p class="checkout__sub">Demo only — no payment is processed.</p>
+        <form id="checkoutForm">
+          <fieldset>
+            <legend>Contact</legend>
+            <div class="form-row">
+              <label for="coEmail">Email</label>
+              <input type="email" id="coEmail" required placeholder="you@email.com" />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Shipping</legend>
+            <div class="form-row">
+              <label for="coName">Full name</label>
+              <input type="text" id="coName" required placeholder="Jane Smith" />
+            </div>
+            <div class="form-row">
+              <label for="coAddress">Address</label>
+              <input type="text" id="coAddress" required placeholder="123 Main St" />
+            </div>
+            <div class="form-row form-row--half">
+              <div>
+                <label for="coCity">City</label>
+                <input type="text" id="coCity" required />
+              </div>
+              <div>
+                <label for="coZip">ZIP</label>
+                <input type="text" id="coZip" required />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Payment (demo)</legend>
+            <div class="form-row">
+              <label for="coCard">Card number</label>
+              <input type="text" id="coCard" placeholder="4242 4242 4242 4242" maxlength="19" />
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn--primary btn--full">Place order</button>
+        </form>
+      </div>
+      <div class="checkout__summary" id="checkoutSummary"></div>
+    </div>
+  </dialog>
+
+  <!-- Order success -->
+  <div class="success" id="success" hidden>
+    <div class="success__box">
+      <div class="success__icon">✓</div>
+      <h2>Order placed!</h2>
+      <p id="successMsg">Thank you for your purchase (demo).</p>
+      <button type="button" class="btn btn--outline" id="successClose">Continue shopping</button>
+    </div>
+  </div>
+
+  <!-- Quick view -->
+  <div class="overlay" id="qvOverlay" hidden></div>
+  <div class="quick-view" id="quickView" hidden role="dialog" aria-modal="true" aria-label="Product details"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

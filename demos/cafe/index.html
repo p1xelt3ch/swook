@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ember &amp; Oak — Specialty Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="steam" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">Ember <span>&amp; Oak</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Our story</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button type="button" class="btn btn--small" id="openReserve">Reserve a table</button>
+        <button type="button" class="nav__menu" id="menuToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__media reveal">
+        <img
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85"
+          alt="Barista pouring latte art"
+          width="800"
+          height="600"
+        />
+        <div class="hero__float">
+          <span class="hero__rating">★ 4.9</span>
+          <p>Loved by locals since 2019</p>
+        </div>
+      </div>
+      <div class="hero__content reveal">
+        <p class="eyebrow">Single-origin · Small batch</p>
+        <h1>Slow coffee.<br /><em>Warm mornings.</em></h1>
+        <p class="hero__lead">A neighborhood café serving pour-overs, seasonal pastries, and brunch plates made from local ingredients.</p>
+        <div class="hero__cta">
+          <a href="#menu" class="btn btn--primary">View menu</a>
+          <button type="button" class="btn btn--outline" id="openReserveHero">Book a table</button>
+        </div>
+        <ul class="hero__tags">
+          <li>7am – 6pm daily</li>
+          <li>Plant-based options</li>
+          <li>Free Wi‑Fi</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Freshly roasted weekly</span><span>·</span>
+        <span>House-made syrups</span><span>·</span>
+        <span>Outdoor patio seating</span><span>·</span>
+        <span>Dog friendly</span><span>·</span>
+        <span>Freshly roasted weekly</span><span>·</span>
+        <span>House-made syrups</span><span>·</span>
+      </div>
+    </section>
+
+    <section class="highlights">
+      <article class="highlight reveal">
+        <div class="highlight__icon">☕</div>
+        <h3>Specialty coffee</h3>
+        <p>Rotating single-origin beans, dialed-in espresso, and slow bar pour-overs.</p>
+      </article>
+      <article class="highlight reveal">
+        <div class="highlight__icon">🥐</div>
+        <h3>Morning bakery</h3>
+        <p>Croissants, sourdough toast, and seasonal cakes baked before opening.</p>
+      </article>
+      <article class="highlight reveal">
+        <div class="highlight__icon">🌿</div>
+        <h3>Brunch &amp; bowls</h3>
+        <p>Avocado toast, shakshuka, grain bowls — served until 2pm on weekends.</p>
+      </article>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="section-head reveal">
+        <p class="eyebrow">What we serve</p>
+        <h2>Our menu</h2>
+        <p class="section-desc">Tap a category to explore. All prices in USD — demo only.</p>
+      </div>
+      <div class="menu-tabs reveal" id="menuTabs" role="tablist">
+        <button type="button" class="menu-tab is-active" data-tab="coffee">Coffee</button>
+        <button type="button" class="menu-tab" data-tab="brunch">Brunch</button>
+        <button type="button" class="menu-tab" data-tab="pastries">Pastries</button>
+        <button type="button" class="menu-tab" data-tab="drinks">Cold drinks</button>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story__grid">
+        <div class="story__imgs reveal">
+          <img
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=85"
+            alt="Café interior with warm lighting"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=500&q=85"
+            alt="Coffee beans and cup"
+            loading="lazy"
+          />
+        </div>
+        <div class="story__copy reveal">
+          <p class="eyebrow">Our story</p>
+          <h2>Built for unhurried conversation.</h2>
+          <p>Ember &amp; Oak started as a weekend pop-up and grew into the corner café our neighborhood needed — a place where the coffee is serious but the vibe is easy.</p>
+          <p>We source beans from small farms, compost our grounds, and keep the playlist low enough to hear your friend across the table.</p>
+          <blockquote>
+            <p>“The kind of café you wish was on your block.”</p>
+            <cite>— Local food guide</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery reveal">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=85" alt="Coffee on wooden table" loading="lazy" />
+      <img src="https://plus.unsplash.com/premium_photo-1723478443774-19ead8ee7ce2?auto=format&fit=crop&w=600&q=85" alt="Latte art" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1643944471768-2d2eac3afb6d?auto=format&fit=crop&w=600&q=85" alt="Pastries display" loading="lazy" />
+      <img src="https://plus.unsplash.com/premium_photo-1673581430690-0b42ab287ae9?auto=format&fit=crop&w=600&q=85" alt="Brunch plate" loading="lazy" />
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="visit__card reveal">
+        <p class="eyebrow">Visit us</p>
+        <h2>Find Ember &amp; Oak</h2>
+        <address>
+          42 Maple Lane<br />
+          Riverside District<br />
+          Open 7:00 – 18:00
+        </address>
+        <ul class="visit__hours">
+          <li><span>Mon – Fri</span><span>7am – 6pm</span></li>
+          <li><span>Sat – Sun</span><span>8am – 7pm</span></li>
+        </ul>
+        <a href="tel:+15550142" class="visit__phone">(555) 010-0142</a>
+        <button type="button" class="btn btn--primary" id="openReserveVisit">Reserve a table</button>
+      </div>
+      <div class="visit__map reveal" aria-hidden="true">
+        <div class="map-placeholder">
+          <span>📍</span>
+          <p>Interactive map — demo placeholder</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__brand">Ember &amp; Oak</p>
+    <p class="footer__note">Portfolio demo · Imagery via <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash License</a></p>
+    <a href="../../index.html" class="footer__back">← Back to portfolio</a>
+  </footer>
+
+  <!-- Reserve modal -->
+  <div class="modal-overlay" id="modalOverlay" hidden></div>
+  <dialog class="modal" id="reserveModal" aria-labelledby="reserveTitle">
+    <button type="button" class="modal__close" id="closeReserve" aria-label="Close">&times;</button>
+    <p class="eyebrow">Reservations</p>
+    <h2 id="reserveTitle">Book your table</h2>
+    <p class="modal__sub">Demo form — no real booking is made.</p>
+    <form id="reserveForm" class="reserve-form">
+      <div class="form-row">
+        <label for="resName">Name</label>
+        <input type="text" id="resName" name="name" required placeholder="Your name" />
+      </div>
+      <div class="form-row">
+        <label for="resEmail">Email</label>
+        <input type="email" id="resEmail" name="email" required placeholder="you@email.com" />
+      </div>
+      <div class="form-row form-row--half">
+        <div>
+          <label for="resDate">Date</label>
+          <input type="date" id="resDate" name="date" required />
+        </div>
+        <div>
+          <label for="resTime">Time</label>
+          <select id="resTime" name="time" required>
+            <option value="">Select…</option>
+            <option>8:00 AM</option>
+            <option>9:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="resGuests">Guests</label>
+        <select id="resGuests" name="guests" required>
+          <option value="">How many?</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6+</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn--primary btn--full">Confirm reservation</button>
+      <p class="form-msg" id="reserveMsg" role="status"></p>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

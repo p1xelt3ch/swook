@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumen Studio — Book Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">Lumen <span>Studio</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#book">Book now</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <button type="button" class="nav__menu" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__copy reveal">
+        <p class="eyebrow">Salon · Spa · Wellness</p>
+        <h1>Book your appointment in <em>under a minute.</em></h1>
+        <p class="hero__lead">Choose a service, pick a time, and get instant confirmation — no phone tag, no waiting on hold.</p>
+        <ul class="hero__stats">
+          <li><strong>4.9</strong><span>Client rating</span></li>
+          <li><strong>12k+</strong><span>Bookings made</span></li>
+          <li><strong>24h</strong><span>Free cancellation</span></li>
+        </ul>
+        <a href="#book" class="btn btn--primary">Start booking</a>
+      </div>
+      <div class="hero__visual reveal">
+        <img
+          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85"
+          alt="Modern salon interior"
+          width="700"
+          height="500"
+        />
+        <div class="hero__chip">
+          <span class="hero__chip-dot"></span>
+          Next slot today: <strong id="nextSlot">—</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-head reveal">
+        <p class="eyebrow">What we offer</p>
+        <h2>Our services</h2>
+      </div>
+      <div class="services__grid" id="servicesGrid"></div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="book__layout">
+        <div class="book__main">
+          <div class="section-head reveal">
+            <p class="eyebrow">Online booking</p>
+            <h2>Reserve your spot</h2>
+          </div>
+
+          <!-- Progress -->
+          <ol class="progress reveal" id="progress">
+            <li class="progress__step is-active" data-step="1"><span>1</span> Service</li>
+            <li class="progress__step" data-step="2"><span>2</span> Date</li>
+            <li class="progress__step" data-step="3"><span>3</span> Time</li>
+            <li class="progress__step" data-step="4"><span>4</span> Details</li>
+          </ol>
+
+          <!-- Step panels -->
+          <div class="panels reveal">
+            <!-- Step 1 -->
+            <div class="panel is-active" id="panel1" data-panel="1">
+              <h3>Select a service</h3>
+              <p class="panel__hint">Tap a service to continue</p>
+              <div class="service-picks" id="servicePicks"></div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="panel" id="panel2" data-panel="2" hidden>
+              <h3>Choose a date</h3>
+              <p class="panel__hint">Sundays closed · Past dates unavailable</p>
+              <div class="calendar" id="calendar">
+                <div class="calendar__head">
+                  <button type="button" class="calendar__nav" id="calPrev" aria-label="Previous month">←</button>
+                  <h4 id="calLabel">Month 2026</h4>
+                  <button type="button" class="calendar__nav" id="calNext" aria-label="Next month">→</button>
+                </div>
+                <div class="calendar__weekdays">
+                  <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                </div>
+                <div class="calendar__days" id="calDays"></div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="panel" id="panel3" data-panel="3" hidden>
+              <h3>Pick a time</h3>
+              <p class="panel__hint" id="timeHint">Select an available slot</p>
+              <div class="times" id="timeSlots"></div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="panel" id="panel4" data-panel="4" hidden>
+              <h3>Your details</h3>
+              <p class="panel__hint">We'll send confirmation to your email (demo only)</p>
+              <form class="details-form" id="detailsForm">
+                <div class="form-row">
+                  <label for="clientName">Full name</label>
+                  <input type="text" id="clientName" required placeholder="Jane Smith" autocomplete="name" />
+                </div>
+                <div class="form-row">
+                  <label for="clientEmail">Email</label>
+                  <input type="email" id="clientEmail" required placeholder="you@email.com" autocomplete="email" />
+                </div>
+                <div class="form-row">
+                  <label for="clientPhone">Phone</label>
+                  <input type="tel" id="clientPhone" placeholder="(555) 000-0000" autocomplete="tel" />
+                </div>
+                <div class="form-row">
+                  <label for="clientNotes">Notes (optional)</label>
+                  <textarea id="clientNotes" rows="3" placeholder="Allergies, preferences, first visit…"></textarea>
+                </div>
+              </form>
+            </div>
+
+            <!-- Confirmation -->
+            <div class="panel panel--confirm" id="panelConfirm" hidden>
+              <div class="confirm">
+                <div class="confirm__icon">✓</div>
+                <h3>You're booked!</h3>
+                <p id="confirmText">Your appointment is confirmed.</p>
+                <div class="confirm__card" id="confirmCard"></div>
+                <button type="button" class="btn btn--outline" id="bookAgain">Book another</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="book__nav reveal" id="bookNav">
+            <button type="button" class="btn btn--ghost" id="btnBack" disabled>Back</button>
+            <button type="button" class="btn btn--primary" id="btnNext" disabled>Continue</button>
+          </div>
+        </div>
+
+        <aside class="summary reveal" id="summary">
+          <h3>Booking summary</h3>
+          <ul class="summary__list">
+            <li><span>Service</span><strong id="sumService">—</strong></li>
+            <li><span>Date</span><strong id="sumDate">—</strong></li>
+            <li><span>Time</span><strong id="sumTime">—</strong></li>
+            <li><span>Duration</span><strong id="sumDuration">—</strong></li>
+          </ul>
+          <p class="summary__total">Total <strong id="sumPrice">—</strong></p>
+          <p class="summary__note">Free cancellation up to 24 hours before your appointment.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="section-head reveal">
+        <p class="eyebrow">Testimonials</p>
+        <h2>Loved by clients</h2>
+      </div>
+      <div class="reviews__grid">
+        <blockquote class="review reveal">
+          <p>“Booking online saved me so much time. The calendar is clear and I got a reminder the day before.”</p>
+          <footer>— Maya R.</footer>
+        </blockquote>
+        <blockquote class="review reveal">
+          <p>“Clean interface, easy to reschedule. Exactly what our salon needed for walk-ins and regulars.”</p>
+          <footer>— James T.</footer>
+        </blockquote>
+        <blockquote class="review reveal">
+          <p>“Picked a service, chose Saturday morning, done in 30 seconds. This is how booking should work.”</p>
+          <footer>— Priya K.</footer>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__brand">Lumen Studio</p>
+    <p class="footer__note">Portfolio demo · Imagery via <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash License</a></p>
+    <a href="../../index.html" class="footer__back">← Back to portfolio</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
